@@ -1,0 +1,404 @@
+:root {
+  --yellow: #ffc600;
+  --black: #272727;
+  --red: #E76F51;
+  --green: #2A9D8F;
+  --container-gray: rgb(240,240,240);
+  --blue: #0091ea;
+  --green: #66B032;
+}
+
+
+html {
+      /*background: rgb(61,61,61);
+      background: linear-gradient(100deg, rgba(61,61,61,1) 10%, rgba(0,0,0,1) 100%);*/
+      background-color: rgb(200,200,200);
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      font-size: 25px;
+      box-sizing: border-box;
+    }
+
+/*.display {
+  font-family: sans-serif;
+}*/
+
+
+
+.container {
+  display: grid;
+  grid-gap: 50px;
+  max-width:1200px;
+  margin: 0 auto;
+  margin-top: 50px;
+  /*border: 5px solid rgba(0, 0, 0, 0.3);*/
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 8fr 2fr;
+}
+
+
+
+.header {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "tempo start";
+  background-color: var(--container-gray);
+  padding: 20px;
+  border: 1px solid rgba(0,0.0.0.75);
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+}
+
+.content {
+  display: grid;
+  grid-gap: 60px;
+  grid-template-columns: 2fr 4fr 1fr;
+  grid-template-areas:
+    "keys widget degrees";
+}
+
+.footer {
+  display: grid;
+  /*grid-area: footer;*/
+}
+
+.keys {
+  /*grid-area: keys;*/
+  display: grid;
+  grid-area: keys;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  /*grid-template-rows: repeat(8, 1fr);*/
+  grid-template-rows: 1fr;
+  background-color: var(--container-gray);
+  padding: 20px;
+  border: 1px solid rgba(0,0.0.0.75);
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+}
+
+.sharp-keys {
+  display: grid;
+  display-area: sharp-keys;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+
+.flat-keys {
+  display: grid;
+  display-area: flat-keys;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+
+.chords {
+  display: grid;
+  grid-area: degrees;
+  grid-gap: 20px;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  background-color: var(--container-gray);
+  padding: 20px;
+  border: 1px solid rgba(0,0.0.0.75);
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+}
+
+.widget {
+  /*grid-area: widget;*/
+  font-family: "Times New Roman", Times, serif;
+  display: grid;
+  grid-template-rows: 42% 58%;
+  /*background-color: rgb(255,255,255,0.7);*/
+  background-color: white;
+  width: 600px;
+  height: 600px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  justify-self: center;
+  align-content: center;
+  align-self: center;
+  /*box-shadow: 3px 3px 8px;*/
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+  grid-area: widget;
+}
+
+/*.widget h2 {
+  margin: 10px;
+}
+
+.widget h1 {
+  display: grid;
+  margin: 10px;
+}*/
+
+.widget p {
+  display: grid;
+  margin: 10px;
+}
+
+#display-key {
+  font-size: 2.5em;
+  /*display: grid;*/
+  align-content: end;
+}
+
+#display-degree {
+  font-size: 4em;
+  align-content: start;
+  font-weight: 600;
+}
+
+.tempo {
+  grid-area: tempo;
+  display: grid;
+  grid-gap: 20px;
+  padding: 10px;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  /*color: rgb(255,255,255,0.7);*/
+  grid-template-areas:
+    "label slider tempo-display";
+}
+
+.tempo p {
+  margin: 0px;
+}
+
+
+.option-btn {
+  background-color: var(--blue);
+  border: none;
+  color: white;
+  /*background: rgba(0, 0, 0, 0.7);*/
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+}
+
+.start {
+  display: grid;
+  grid-area: start;
+}
+
+.start-btn {
+  background-color: var(--green);
+  border: none;
+  color: white;
+  letter-spacing: 1px;
+  /*background: rgba(0, 0, 0, 0.7);*/
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.25);
+}
+
+.display-text {
+  margin: 10px;
+}
+
+.btn-off {
+  background-color: white;
+  color: var(--blue);
+}
+
+.start-btn-off {
+  background-color: red;
+  color: white);
+}
+
+
+/* OVERRIDE SLIDER STYLE*/
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+/*STYLING FOR SLIDER TRACK*/
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: var(--blue);
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
+
+/*STYLING FOR SLIDER THUMB*/
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+}
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+button:active {
+  width: 95%;
+  height: 95%;
+}
+
+
+
+@media (max-width: 1000px) {
+  .container {
+    grid-gap: 80px;
+  }
+
+  .header {
+    grid-template-columns: auto;
+    grid-template-rows: 1fr auto;
+    grid-gap: 40px;
+    grid-template-areas:
+      "tempo"
+      "start";
+  }
+
+
+  .tempo {
+    /*grid-area: tempo;*/
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    display: grid;
+    grid-template-areas:
+      "label"
+      "slider" 
+      "tempo-display";
+}
+
+  .content {
+    grid-template-columns: auto;
+    grid-gap: 60px;
+    grid-template-areas:
+      "keys"
+      "widget"
+      "degrees";
+  }
+
+  .keys {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "sharp-keys"
+      "flat-keys";
+  }
+
+  .sharp-keys {
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .flat-keys {
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .chords {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+
+}
+
+
