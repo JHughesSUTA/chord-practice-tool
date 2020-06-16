@@ -74,48 +74,42 @@
       </div>
       <div class="widget">
         <p id="display-key">C</p>
-        <p id="display-degree">I</p>
+        <p id="display-chord">7</p>
       </div>
       <div class="chords">
-        <div class="chord i">
-          <button class="option-btn" onclick="toggleButton(this);addRemoveDegree()">I</button>
+        <div class="chord maj-seven">
+          <button class="option-btn" onclick="toggleButton(this);addRemoveChord()">M7</button>
         </div>
-        <div class=" chord ii">
-          <button class="option-btn btn-off" onclick="toggleButton(this);addRemoveDegree()">ii</button>
+        <div class=" chord dom-seven">
+          <button class="option-btn" onclick="toggleButton(this);addRemoveChord()">7</button>
         </div>
-        <div class=" chord iii">
-          <button class="option-btn btn-off" onclick="toggleButton(this);addRemoveDegree()">iii</button>
+        <div class=" chord min-seven">
+          <button class="option-btn" onclick="toggleButton(this);addRemoveChord()">m7</button>
         </div>
-        <div class=" chord iv">
-          <button class="option-btn" onclick="toggleButton(this);addRemoveDegree()">IV</button>
+        <div class=" chord half-dim-seven">
+          <button class="option-btn btn-off" onclick="toggleButton(this);addRemoveChord()">m7(b5)</button>
         </div>
-        <div class=" chord v">
-          <button class="option-btn" onclick="toggleButton(this);addRemoveDegree()">V</button>
+        <div class=" chord dim-seven">
+          <button class="option-btn btn-off" onclick="toggleButton(this);addRemoveChord()">°7</button>
         </div>
-        <div class=" chord vi">
-          <button class="option-btn btn-off" onclick="toggleButton(this);addRemoveDegree()">vi</button>
-        </div>
-        <div class=" chord vii">
-          <button class="option-btn btn-off" onclick="toggleButton(this);addRemoveDegree()">vii°</button>
+        <div class=" chord dom-seven-alt">
+          <button class="option-btn btn-off" onclick="toggleButton(this);addRemoveChord()">7alt.</button>
         </div>
       </div>
     </div>
 
     <div class="footer"></div>
 
-    <!-- <div class="display">
-      <h1 class="display_degree">Ab</h1>
-    </div> -->
   </div>
 
 
 <script>
   var t;
   var running = false; 
-  var showDegree = document.querySelector('#display-degree');
+  var showChord = document.querySelector('#display-chord');
   var showKey = document.querySelector('#display-key');
   var showTempo = document.querySelector('#tempo-value');
-  var degrees = ['I','IV','V'];
+  var chords = ['M7','7','m7'];
   var keys = ['C','G','D','F','Bb'];
   var tempo = document.querySelector('[name="tempo"]');
   tempo.addEventListener('change', tempoChange);
@@ -131,16 +125,16 @@
     var target = event.target.innerHTML;
   }
 
-  function addRemoveDegree() {
+  function addRemoveChord() {
     var target = event.target.innerHTML;
-    if (degrees.includes(target)) {
-      for (var i = 0; i < degrees.length; i++) {
-        if (degrees[i] === target) {
-          degrees.splice(i,1);
+    if (chords.includes(target)) {
+      for (var i = 0; i < chords.length; i++) {
+        if (chords[i] === target) {
+          chords.splice(i,1);
         }
       }
     } else {
-      degrees.push(target);
+      chords.push(target);
     }
   }
 
@@ -176,15 +170,13 @@
     } else {
       event.target.innerHTML = "START";
     }
-    // const icon = this.paused ? 'STOP' : 'START';
-    // toggle.textContent = icon;
   }
 
 
   // set variable from values randomly every ___ seconds
   function updateWidget() {
-    var degree = degrees[Math.floor(Math.random() * degrees.length)];
-    showDegree.textContent = degree;
+    var chord = chords[Math.floor(Math.random() * chords.length)];
+    showChord.textContent = chord;
     var key = keys[Math.floor(Math.random() * keys.length)];
     showKey.textContent = key;
   }
@@ -199,11 +191,6 @@
     } 
   }
 
-
-  // set interval (tempo) for the changing of the display
-  // setInterval(function(){
-  //   updateWidget();
-  // }, 2000);
 
 
 </script>
