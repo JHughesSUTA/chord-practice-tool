@@ -1,10 +1,6 @@
 :root {
-  --yellow: #ffc600;
-  --black: #272727;
-  --red: #E76F51;
-  --green: #2A9D8F;
   --container-gray: rgb(240,240,240);
-  --blue: #0091ea;
+  --purple: #9932CC;
   --green: #66B032;
 }
 
@@ -178,7 +174,7 @@ html {
 
 
 .option-btn {
-  background-color: var(--blue);
+  background-color: var(--purple);
   border: none;
   color: white;
   /*background: rgba(0, 0, 0, 0.7);*/
@@ -219,7 +215,7 @@ html {
 
 .btn-off {
   background-color: white;
-  color: var(--blue);
+  color: var(--purple);
 }
 
 .start-btn-off {
@@ -255,7 +251,7 @@ input[type=range]::-webkit-slider-runnable-track {
   height: 8.4px;
   cursor: pointer;
   box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  background: var(--blue);
+  background: var(--purple);
   border-radius: 1.3px;
   border: 0.2px solid #010101;
 }
